@@ -1,38 +1,367 @@
+/*variables*/
+ :root {
+   --primary-color: rgb(48, 46, 46);
+   --secondary-color: rgb(255,255,255);
+   --alternate-color: rgb(20,20,20);
+   --linkHover-color: rgb(172, 172, 241);
+   --button-color: rgb(42, 124, 218);
+   --buttonHover-color: rgb(6, 166, 187);
+   --formBackground-color: rgba(0, 0, 0, 0.7);
+   --error-color: rgb(225,29,98);
+ }
+/*removing defaults*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*base styles & title *? 
+body {
+  width: 100%;
+}
+
+h1 {
+  font-size: 1.65rem;;
+}
+
+/*Navbar */
+.sidebar {
+  position: absolute;
+  left: -50%;
+  width: 40%;
+  height: 100vh;
+  background:var(--alternate-color);
+  opacity: 0.8;
+  color: white;
+  transition: .4s;
+}
+
+.sidebarToggle {
+  left:0;
+ 
+}
+
+
+.sidebar ul {
+  font-size: .75rem;
+  padding: 20px;
+  margin-top: 60px;
+  outline: none;
+ list-style: none;
+}
+
+.sidebar a {
+  text-decoration: none;
+}
+.sidebar a:visited {
+  color: var(--secondary-color);
+}
+.sidebar a:hover {
+  color: var(--linkHover-color);
+}
+.nav-text{
+ padding-bottom: 2em;
+
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(142deg, rgb(57, 63, 66) 0%, rgba(0,164,255,0) 66%, rgba(70,125,142,1) 10200%), url(./imgs/medical_cover.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  /* overflow: scroll; */
+}
+
+.hero-section-text a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+.nav-icon {
+  width: 17%;
+  
+}
+
+.nav-hamburger {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+nav {
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px 25px;
+  transition: .2s
+  
+}
+
+.nav-scrolled {
+  background: var(--primary-color);
+  padding: 10px;
+ 
+}
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.hero-section-text {
+  color: var(--secondary-color);
+  margin-top: 90px;
+  margin-bottom: 15px;
+  margin-left: 40px;
+}
+
+#home-title {
+  font-size: 1.65rem;
+  animation: type 4s 1s 1 steps(22);
+  overflow: hidden;
+  white-space: nowrap;
+  width: 20ch;
+}
+
+@keyframes type {
+  0% {
+    width: 0ch;
+    border-right: 4px solid white;
+  }
+  99% {
+    width: 21ch;
+    border-right: 4px solid white;
+  }
+  100% {
+    border-right: none;
+  }
+}
+
+.hero-section-text h1, p, button {
+  margin-top: 30px;
+}
+
+button {
+  background: var(--button-color);
+  outline: none;
+  color: var(--secondary-color);
+  padding: 1em 2em;
+  border: none;
+  border-radius: 50px;
+}
+
+button:hover {
+  background: var(--buttonHover-color);
+}
+
+.hero-section-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: var(--formBackground-color);
+  border: none;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  width: 70%;
+  margin: 25px auto 0 auto;
+  padding: 20px;
+  margin-bottom: -2px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.hero-section-form input, .hero-section-form textarea, .hero-section-form select {
+  color: rgb(168, 168, 177);
+  background: none;
+  outline: none;
+  border: none;
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-section-form input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+form button {
+  display: block;
+}
+
+form textarea {
+  display: block;
+}
 .App {
+  display: relative;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  width: 70%;
+  margin: 70px auto;
+  text-align: justify;
+}
+
+.about {
+  margin-bottom: 70px;
+}
+
+.about-img {
+  text-align: center;
+  margin: 20px auto;
+}
+.about-img img {
+  width: 50px;
+}
+
+footer {
+  width: 100%;
+  color: white;
+  background: var(--primary-color);
+}
+
+.footer-content {
+  width: 80%;
+  margin:0 auto;
+  padding: 20px;
+}
+
+footer img {
+  width: 50px;
+}
+
+/*catalog page*/
+.hero-section-catalog {
+   
+  background: linear-gradient(142deg, rgb(57, 63, 66) 0%, rgba(0,164,255,0) 66%, rgba(70,125,142,1) 10200%), url(./imgs/catalogo_cover.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+.catalog {
+  background: white;
+}
+
+.catalog-menu {
+  background: linear-gradient(142deg, rgb(57, 63, 66) 0%, rgba(0,164,255,0) 66%, rgba(70,125,142,1) 10200%), url('./imgs/medico_con_tapabocas-wide-compr_smaller.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  padding: 50px 0 0 0;
+}
+
+.menu-options {
+  background: var(--formBackground-color);
+  width: 100%;
+  color: white;
+  padding: 30px 20px 30px 50px;
+  margin: 200px 0 0 0;
+}
+
+.menu-options input {
+  color: rgb(168, 168, 177);
+  margin-top: 40px;
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  width: 6
+  0%;
+  margin-right: 10px;
+}
+
+.catalog {
+  margin-bottom: 50px;
+}
+
+/*contact page*/
+#contact-main {
+  margin: 50px 0;
+  height: 50px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero-section-contact {
+   
+  background: linear-gradient(142deg, rgb(57, 63, 66) 0%, rgba(0,164,255,0) 66%, rgba(70,125,142,1) 10200%), url(./imgs/contact_cover2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.contactForm {
+  margin-top: -40px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+/*upload form*/
+.hero-section-uploadtxt {
+  margin:50px 20px;
+}
+.hero-section-upload {
+  background: linear-gradient(142deg, rgb(57, 63, 66) 0%, rgba(0,164,255,0) 66%, rgba(70,125,142,1) 10200%), url(./imgs/upload_cover.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  /* overflow: scroll; */
+  height:833px
+}
+
+
+
+#uploadForm {
+  width: 100%;
+  max-width: 600px;
+  margin: 80px auto;
+  color: var(--secondary-color);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+}
+
+#uploadForm h1 {
+  margin-bottom: 40px;
+  font-size: 1.75rem;
+}
+
+#uploadForm label {
+  margin-top: 20px;
+}
+
+input[type = "file"] {
+  display: none;
+}
+
+label[type = 'file'] {
+  background: grey;
   color: white;
+  width: 70%;
+  margin: 20px;
+  outline:none;
+  padding: .5em 1em;
+  cursor: pointer;
+  text-align: center;
+  font-size: .8rem;
 }
 
-.App-link {
-  color: #61dafb;
+label[type = "file"]:hover {
+  background: var(--primary-color);
+  border: 1px solid green;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.progress-bar {
+  height: 5px;
+  background: var(--secondary-color);
+  margin-top: 20px;
 }
+
+/*product gallery*/
+.productGallery {
+  width: 80%;
+  height: 20px;
+}
+
