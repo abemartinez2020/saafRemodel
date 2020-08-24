@@ -17,5 +17,6 @@ import 'firebase/firestore';
 
   const saafStorage = firebase.storage();
   const saafFirestore = firebase.firestore();
+  const timestamp = firebase.firestore.FieldValue.serverTimestamp;
 
-  export { saafStorage, saafFirestore };
+  export { saafStorage, saafFirestore, timestamp };
