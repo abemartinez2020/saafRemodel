@@ -6,8 +6,8 @@ import {Link, NavLink} from 'react-router-dom';
 const Navbar = () => {
     const [navbar, setNavbar] = useState(false);
 
-    const handlehamburger = () => {
-        
+    const handlehamburger = (e) => {
+        console.log(e.target)
         const navMenu = document.querySelector('.sidebar');
        
             navMenu.classList.toggle('sidebarToggle'); 

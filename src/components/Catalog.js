@@ -16,8 +16,13 @@ const Catalog = () => {
             </div>  
            
                 <div className = "menu-options">
-                    <input type = "text" placeholder = "Buscar Producto"/>
-                    <input type = "text" placeholder = "filtro"/>
+                    <input type = "text" placeholder = "Nombre del Producto"/>
+                    <select id ="catalogCategory">
+                        <option value = "Categoria">Categoria</option>
+                        <option value = "guantes">Guantes</option>
+                        <option value = "cubrebocas">Cubrebocas</option>
+                        <option value = "batas">Batas</option>
+                    </select>
                     <button> Buscar</button>
                 </div>
             

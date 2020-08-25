@@ -53,7 +53,7 @@ const UploadForm = () => {
                 <input id = "modelProduct" name = "modelProduct"/>
                 <label htmlFor = "categoryProduct">Categoria del Producto</label>
                 <select id = "categoryProduct" name = "categoryProduct">
-                    <option value = "select"></option>
+                    <option value = "selecionar"></option>
                     <option value = "guantes">Guantes</option>
                     <option value = "cubrebocas">Cubrebocas</option>
                     <option value = "batas">Batas</option>
