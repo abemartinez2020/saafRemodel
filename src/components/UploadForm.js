@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import ProgressBar from './ProgressBar';
 import ProductGrid from './ProductGrid';
+import Modal from './Modal';
 
 const UploadForm = () => {
     const [file, setFile] = useState(null);
     const [error, setError] = useState(null);
     const [productDetails, setProductDetails] =useState(null); 
+    const [selectedImg, setSelectedImg] = useState(null);
 
     const types = ['image/png', 'image/jpeg'];
     const getInputValue = (id) => document.getElementById(id);
@@ -33,6 +35,7 @@ const UploadForm = () => {
          setError('Por favor sube fotos (png or jpeg)');
      }
     }
+    
     return(
         <div className = "uploadPage">
             
@@ -72,7 +75,10 @@ const UploadForm = () => {
             </div>
             </header>
             <div className = "productGallery">
-                <ProductGrid/>
+                <ProductGrid setSelectedImg = {setSelectedImg}/>
+                {selectedImg &&
+                    <Modal selectedImg ={selectedImg} setSelectedImg = {setSelectedImg}/>
+                }
             </div>
         </div>
 
