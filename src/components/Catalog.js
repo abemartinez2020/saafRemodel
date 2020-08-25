@@ -1,6 +1,10 @@
-import React from 'react';
+import React , { useState } from 'react';
+import ProductGrid from './ProductGrid';
+import Modal from './Modal';
 
 const Catalog = () => {
+    const [selectedImg, setSelectedImg] = useState(null);
+    const [selectedProduct, setSelectedProduct] = useState(null);
     return (
         <div className = "catalog">
 
@@ -16,10 +20,14 @@ const Catalog = () => {
                     <input type = "text" placeholder = "filtro"/>
                     <button> Buscar</button>
                 </div>
-        
             
         </header>
-
+        <div className = "productGallery">
+                <ProductGrid setSelectedImg = {setSelectedImg} setSelectedProduct = {setSelectedProduct}/>
+                {selectedImg &&
+                    <Modal selectedImg ={selectedImg}  selectedProduct = {selectedProduct} setSelectedImg = {setSelectedImg}/>
+                }
+            </div>
 
             
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Modal = ({selectedImg, setSelectedImg}) => {
+const Modal = ({selectedImg, selectedProduct, setSelectedImg}) => {
 
     const handleClick = (e) => {
         if(e.target.classList.contains('backdrop')) {
@@ -11,7 +11,17 @@ const Modal = ({selectedImg, setSelectedImg}) => {
     }
     return (
         <div className = "backdrop" onClick = {handleClick}>
-            <img src = {selectedImg} alt ="enlarged pick"/>
+            <div className = "product-container"> 
+                <div className = "img-container">
+                    <img src = {selectedImg} alt ="enlarged pick"/>
+                </div>
+                
+                <h4>{selectedProduct.productName}</h4> 
+                <p><strong>Modelo:</strong>{' ' + selectedProduct.productModel}</p>
+                <p><strong>Descripcion:</strong>{' ' + selectedProduct.productDesc}</p>
+                <p><strong>Categoria:</strong>{' ' + selectedProduct.productCategory}</p>
+                
+            </div>
         </div>
         
     )

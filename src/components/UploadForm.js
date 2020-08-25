@@ -8,6 +8,7 @@ const UploadForm = () => {
     const [error, setError] = useState(null);
     const [productDetails, setProductDetails] =useState(null); 
     const [selectedImg, setSelectedImg] = useState(null);
+    const [selectedProduct, setSelectedProduct] = useState(null);
 
     const types = ['image/png', 'image/jpeg'];
     const getInputValue = (id) => document.getElementById(id);
@@ -75,9 +76,9 @@ const UploadForm = () => {
             </div>
             </header>
             <div className = "productGallery">
-                <ProductGrid setSelectedImg = {setSelectedImg}/>
+                <ProductGrid setSelectedImg = {setSelectedImg} setSelectedProduct = {setSelectedProduct}/>
                 {selectedImg &&
-                    <Modal selectedImg ={selectedImg} setSelectedImg = {setSelectedImg}/>
+                    <Modal selectedImg ={selectedImg}  selectedProduct = {selectedProduct} setSelectedImg = {setSelectedImg}/>
                 }
             </div>
         </div>

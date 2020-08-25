@@ -407,12 +407,40 @@ label[type = "file"]:hover {
   background: rgba(0, 0, 0, 0.5);
 }
 
-.backdrop img {
-  display: block;
-  max-width: 60%;
-  max-height: 80%;
+.product-container {
+  width: 80%;
+  height: 85%;
+  max-width: 800px;
+  margin: 0 auto;
   margin: 60px auto;
+  background: rgba(255, 255, 255, 0.8);
   box-shadow: 3px 5px 7px rgba(0,0,0,0.5);
+  text-align: center;
+  
+}
+
+.product-container p {
+  margin: 15px 0 5px 0;
+}
+
+.product-container h4 {
+  margin: 25px 0;
+}
+
+
+.img-container {
+  display: block;
+  max-width: 100%;
+  max-height: 450px;
+  padding: 25px;
+  background: white;
+  overflow: scroll;
+  
+}
+
+.img-container img {
+  width: 80%;
+  max-width: 550px;
 }
 
 /*media queries */
