@@ -15,7 +15,6 @@ const UploadForm = () => {
 
  const  onSubmitHandler = (e) => {
      e.preventDefault();
-    //  let selected = e.target.files[0];
     setProductDetails( {
         productName : getInputValue('nameProduct').value,
         productDesc : getInputValue('descProduct').value,

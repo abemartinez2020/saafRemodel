@@ -1,13 +1,24 @@
 import React from  'react';
 import useFirestore from '../hooks/useFirestore';
 
-const ProductGrid = ({setSelectedImg,setSelectedProduct}) => {
+const ProductGrid = ({setSelectedImg,setSelectedProduct, filteredProduct}) => {
     const { docs } = useFirestore('products');
-    console.log(docs);
+    let filteredDocs = docs;
+   
+   if(filteredProduct) {
+       filteredDocs = docs.filter((doc) => {
+        return (
+            
+            doc.productName.includes(filteredProduct.productSearched) || 
+            doc.productCategory.includes(filteredProduct.catalogCategory)
+        )
+    })
+}
+        
     return (
         <div className = "product-list">
             <div className = "product-grid"> 
-                { docs && docs.map(doc => (
+                { filteredDocs && filteredDocs.map(doc => (
                         <div className = "product-card" key = {doc.id} onClick = { () => {
                             return [
         

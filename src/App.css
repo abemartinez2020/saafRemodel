@@ -282,6 +282,15 @@ footer img {
   margin-bottom: 50px;
 }
 
+#filterClear {
+  background: rgb(97, 97, 20);
+  margin-left: 50px;
+}
+
+#filterClear:hover {
+  background: rgb(102, 22, 22);
+}
+
 /*contact page*/
 #contact-main {
   margin: 50px 0;
