@@ -28,6 +28,7 @@ const Navbar = () => {
             <Link to ="/">
                 <img className = "nav-icon" src = {logo} alt = " Grupo SAAF logo"/>
             </Link>
+            <button id = "exitButton">Salir</button>
             <img className = "nav-hamburger" src = {hamburger} alt = "hamburger icon" onClick = {handlehamburger}/>
             <div className = "sidebar">
                 <ul>
