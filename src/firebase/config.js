@@ -20,4 +20,4 @@ import 'firebase/auth';
   const timestamp = firebase.firestore.FieldValue.serverTimestamp;
   const saafAuth = firebase.auth();
 
-  export { saafStorage, saafFirestore, timestamp, saafAuth };
+  export { saafStorage, saafFirestore, saafAuth,timestamp  };
