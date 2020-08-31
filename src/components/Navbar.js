@@ -3,6 +3,7 @@ import  logo from '../imgs/white_logo.png';
 import hamburger from '../imgs/hamburger_icon.png';
 import {Link, NavLink} from 'react-router-dom';
 import {AuthContext} from '../context/AuthContext';
+import {saafAuth } from '../firebase/config';
 
 const Navbar = () => {
     const [navbar, setNavbar] = useState(false);
@@ -23,13 +24,22 @@ const Navbar = () => {
     }
 
     window.addEventListener('scroll', navBackground)
+
+    const signOutHandler = () => {
+        saafAuth.signOut()
+        .then((response) => {
+            setAuth(false);
+        }).catch((error) => {
+            console.log(error)
+        })
+    }
     return (
         
         <nav id ="navigation" className = {navbar ? 'nav-scrolled' : 'nav'}>
             <Link to ="/">
                 <img className = "nav-icon" src = {logo} alt = " Grupo SAAF logo"/>
             </Link>
-            {auth ? <button id = "exitButton" onClick = {() => setAuth(false)} >Salir</button> : null}
+            {auth ? <button id = "exitButton" onClick = {signOutHandler} >Salir</button> : null}
             <img className = "nav-hamburger" src = {hamburger} alt = "hamburger icon" onClick = {handlehamburger}/>
             <div className = "sidebar">
                 <ul>

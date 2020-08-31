@@ -2,6 +2,7 @@ import React, {useState, useContext} from 'react';
 import ProgressBar from './ProgressBar';
 import ProductGrid from './ProductGrid';
 import Modal from './Modal';
+import {saafAuth } from '../firebase/config';
 import {AuthContext} from '../context/AuthContext';
 import { Route, Redirect } from 'react-router-dom';
 
@@ -12,6 +13,9 @@ const UploadForm = () => {
     const [selectedImg, setSelectedImg] = useState(null);
     const [selectedProduct, setSelectedProduct] = useState(null);
     const {auth, setAuth} =useContext(AuthContext);
+    
+    const user = saafAuth.currentUser;
+    console.log(user);
 
     const types = ['image/png', 'image/jpeg'];
     const getInputValue = (id) => document.getElementById(id);
@@ -42,7 +46,7 @@ const UploadForm = () => {
     return(
         <div className = "uploadPage">
             <Route exact path = "/admin/uploadform">
-            {!auth ? <Redirect to = "/"/> : null}
+            {!auth || !user ? <Redirect to = "/"/> : null}
              </Route>
             
             <header className = "hero-section hero-section-upload">
