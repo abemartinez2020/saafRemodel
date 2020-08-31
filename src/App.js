@@ -8,12 +8,14 @@ import Footer from './components/Footer';
 import UploadForm from './components/UploadForm';
 import AdminLogin from './components/AdminLogin';
 import { BrowserRouter, Route } from 'react-router-dom';
+import AuthContextProvider from './context/AuthContext';
 
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        <AuthContextProvider>
           <Navbar/>
           <Route exact path = "/" component = {Home} />
           <Route path ="/catalogo" component = {Catalog} />
@@ -21,6 +23,7 @@ function App() {
           <Route exact path = "/admin" component = {AdminLogin}/>
           <Route path = "/admin/uploadform" component = {UploadForm}/>
           <Footer/>
+          </AuthContextProvider>
       </div>
     </BrowserRouter>
     

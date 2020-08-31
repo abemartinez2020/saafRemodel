@@ -1,7 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import ProgressBar from './ProgressBar';
 import ProductGrid from './ProductGrid';
 import Modal from './Modal';
+import {AuthContext} from '../context/AuthContext';
+import { Route, Redirect } from 'react-router-dom';
 
 const UploadForm = () => {
     const [file, setFile] = useState(null);
@@ -9,6 +11,7 @@ const UploadForm = () => {
     const [productDetails, setProductDetails] =useState(null); 
     const [selectedImg, setSelectedImg] = useState(null);
     const [selectedProduct, setSelectedProduct] = useState(null);
+    const {auth, setAuth} =useContext(AuthContext);
 
     const types = ['image/png', 'image/jpeg'];
     const getInputValue = (id) => document.getElementById(id);
@@ -38,6 +41,9 @@ const UploadForm = () => {
     
     return(
         <div className = "uploadPage">
+            <Route exact path = "/admin/uploadform">
+            {!auth ? <Redirect to = "/"/> : null}
+             </Route>
             
             <header className = "hero-section hero-section-upload">
             

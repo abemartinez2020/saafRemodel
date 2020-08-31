@@ -1,11 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useContext} from 'react';
 import  logo from '../imgs/white_logo.png';
 import hamburger from '../imgs/hamburger_icon.png';
 import {Link, NavLink} from 'react-router-dom';
+import {AuthContext} from '../context/AuthContext';
 
 const Navbar = () => {
     const [navbar, setNavbar] = useState(false);
-
+    const {auth, setAuth} =useContext(AuthContext);
     const handlehamburger = (e) => {
         console.log(e.target)
         const navMenu = document.querySelector('.sidebar');
@@ -28,7 +29,7 @@ const Navbar = () => {
             <Link to ="/">
                 <img className = "nav-icon" src = {logo} alt = " Grupo SAAF logo"/>
             </Link>
-            <button id = "exitButton">Salir</button>
+            {auth ? <button id = "exitButton" onClick = {() => setAuth(false)} >Salir</button> : null}
             <img className = "nav-hamburger" src = {hamburger} alt = "hamburger icon" onClick = {handlehamburger}/>
             <div className = "sidebar">
                 <ul>
