@@ -3,6 +3,7 @@ import about from '../imgs/about.png';
 import mission from '../imgs/mission.png';
 import vision from '../imgs/vision.png';
 import {Link, NavLink} from 'react-router-dom';
+import ContactForm from './ContactForm';
 
 
 const Home = () => {
@@ -16,14 +17,7 @@ const Home = () => {
                 <button><Link to = "/catalogo">CATALAGO</Link></button>
                 <p>envio a toda la Republica</p>
             </div>
-            <form className = "hero-section-form">
-                <input type = "text" placeholder = "Nombre" required/>
-                <input type = "email" placeholder = "Correo Electronico" required/>
-                <input type = "text" placeholder = "Telefono"/>
-                <textarea placeholder = "Mensaje" cols = "25"></textarea>
-                <button>Enviar</button>
-            </form>
-            
+            <ContactForm/>
         </header>
 
         <main>
